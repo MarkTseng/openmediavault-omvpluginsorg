@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $Id: postrm 37 2011-11-26 14:26:44Z imooreyahoo@gmail.com $
+#
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+if [ "$1" = "purge" ] || [ "$1" = "remove" ]; then
+
+	[ -e /etc/apt/sources.list.d/omv-plugins-org-stable.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-stable.list
+	[ -e /etc/apt/sources.list.d/omv-plugins-org-unstable.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-unstable.list
+		
+fi
+
+exit 0
