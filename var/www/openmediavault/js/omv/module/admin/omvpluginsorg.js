@@ -26,7 +26,7 @@ Ext.ns("OMV.Module.System");
 
 // Register the menu.
 OMV.NavigationPanelMgr.registerMenu("system", "OmvPluginsOrg", {
-	text: "omv-plugins.org",
+	text: "OMV-Plugins.org",
 	icon: "images/omvpluginsorg.png"
 });
 
