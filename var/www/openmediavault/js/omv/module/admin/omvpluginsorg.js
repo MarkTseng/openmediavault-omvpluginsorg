@@ -68,7 +68,7 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 				inputValue: 1
 			},{
 				fieldLabel: " ",
-                html: "If, a stable and unstable package candidate exists, the package with a higher version number will be installed."
+                html: "If both a stable and unstable package candidate exists, the package with a higher version number will be installed."
 			}]
 		}];
 	}
