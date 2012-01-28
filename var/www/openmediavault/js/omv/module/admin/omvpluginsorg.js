@@ -2,8 +2,10 @@
  * This file is part of OpenMediaVault.
  *
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
- * @author    Volker Theile <volker.theile@openmediavault.org>
- * @copyright Copyright (c) 2009-2011 Volker Theile
+ * @author    Marcel Beck <marcel.beck@mbeck.org>
+ * @author		Ian Moore <imooreyahoo@gmail.com>
+ * @copyright Copyright (c) 2011-2012 Marcel Beck
+ * @copyright Copyright (c) 2011 Ian Moore
  *
  * OpenMediaVault is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +28,7 @@ Ext.ns("OMV.Module.System");
 
 // Register the menu.
 OMV.NavigationPanelMgr.registerMenu("system", "OmvPluginsOrg", {
-	text: "omv-plugins.org",
+	text: "OMV-Plugins.org",
 	icon: "images/omvpluginsorg.png"
 });
 
@@ -55,18 +57,18 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 				name: "use-stable",
 				fieldLabel: "Stable",
 				checked: false,
-				boxLabel: "Use the list plugins provided in the Stable repository.",
+				boxLabel: "Use the list of plugins provided in the Stable repository.",
 				inputValue: 1
 			},{
-                xtype: "checkbox",
-                name: "use-unstable",
-                fieldLabel: "Unstable",
-                checked: false,
-                boxLabel: "Use the list of plugins provided in the Unstable repository.",
-                inputValue: 1
+				xtype: "checkbox",
+				name: "use-unstable",
+				fieldLabel: "Unstable",
+				checked: false,
+				boxLabel: "Use the list of plugins provided in the Unstable repository.",
+				inputValue: 1
 			},{
 				fieldLabel: " ",
-                html: "If both a stable and unstable package candidate exists, the package with a higher version number will be installed."
+                html: "If, a stable and unstable package candidate exists, the package with a higher version number will be installed."
 			}]
 		}];
 	}
