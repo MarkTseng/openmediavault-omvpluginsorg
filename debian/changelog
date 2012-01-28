@@ -1,3 +1,9 @@
+openmediavault-omvpluginsorg (0.1.2) unstable; urgency=low
+
+  * Modified info text
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Sat, 28 Jan 2012 13:13:07 +0100
+
 openmediavault-omvpluginsorg (0.1.1) unstable; urgency=low
 
   * Changed menu entry text

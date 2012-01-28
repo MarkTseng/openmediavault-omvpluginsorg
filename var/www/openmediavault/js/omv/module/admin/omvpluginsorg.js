@@ -3,7 +3,9 @@
  *
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author    Marcel Beck <marcel.beck@mbeck.org>
+ * @author		Ian Moore <imooreyahoo@gmail.com>
  * @copyright Copyright (c) 2011-2012 Marcel Beck
+ * @copyright Copyright (c) 2011 Ian Moore
  *
  * OpenMediaVault is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

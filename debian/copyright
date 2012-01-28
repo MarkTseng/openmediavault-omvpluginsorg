@@ -1,14 +1,17 @@
 This work was packaged for Debian by:
 
     Ian Moore <imooreyahoo@gmail.com> on Sun, 20 Nov 2011 20:56:19 -0500
+    Marcel Beck <marcel.beck@mbeck.org> on Sat, 28 Jan 2012 13:13:07 +0100
 
 Upstream Author(s):
 
     Ian Moore <imooreyahoo@gmail.com>
+    Marcel Beck <marcel.beck@mbeck.org>
 
 Copyright:
 
     Copyright (C) 2011 Ian Moore
+    Copyright (C) 2011-2012 Marcel Beck
 
 License:
 
@@ -31,5 +34,6 @@ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".
 The Debian packaging is:
 
     Copyright (C) 2011 Ian Moore <imooreyahoo@gmail.com>
+    Copyright (C) 2011-2012 Marcel Beck <marcel.beck@mbeck.org>
     and is licensed under the GPL version 3, see above.
 
