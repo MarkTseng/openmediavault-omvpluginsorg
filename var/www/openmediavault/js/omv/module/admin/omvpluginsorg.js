@@ -99,6 +99,10 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 							{
 								fieldLabel:" ",
 								html      :"<b>Glass can break the system. You have to know what you're doing here.</b>"
+							},
+							{
+								fieldLabel:" ",
+								html      :"<b>Donald and Glass only supports the last OMV version.<b>"
 							}
 						]
 					},
@@ -112,10 +116,6 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 							{
 								fieldLabel:" ",
 								html      :"If more then one repository is enabled, the package with a higher version number will be installed."
-							},
-							{
-								fieldLabel:" ",
-								html      :"Donald and Glass only supports the last OMV version."
 							}
 						]
 					}
