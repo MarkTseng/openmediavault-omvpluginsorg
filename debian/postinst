@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # $Id: postinst 38 2011-11-26 16:56:14Z imooreyahoo@gmail.com $
 #
@@ -16,7 +16,21 @@ case "$1" in
 		# Fix permissions
 		omv_install_fixperms
 
-		sudo /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-*.list
+		/bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-*.list
+
+		version=$(xmlstarlet sel -t -v //version ${OMV_PRODUCTINFO_FILE} | xmlstarlet unesc)
+		if [ ${#version} -gt 2 ]; then
+			version=${version:0:3}
+		fi
+
+		case ${version} in
+			0.2)
+				echo 'deb http://packages.omv-plugins.org ix main' >/etc/apt/sources.list.d/omv-plugins-org-ix.list
+				;;
+			0.3)
+				echo 'deb http://packages.omv-plugins.org omnius main' >/etc/apt/sources.list.d/omv-plugins-org-omnius.list
+				;;
+		esac
 		
 		# Add key
 		cat <<EOF | apt-key add -
@@ -58,11 +72,9 @@ EOF
 
 !! README !!
 
-For security reason you have to enable this Plugin manually!
-For security reason you have to enable this Plugin manually!
-For security reason you have to enable this Plugin manually!
-For security reason you have to enable this Plugin manually!
-For security reason you have to enable this Plugin manually!
+Be sure to click on the Check button in the
+System / Plugins menu after this plugin is
+installed.
 
 =============================================				
 
