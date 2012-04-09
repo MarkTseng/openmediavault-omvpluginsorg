@@ -15,6 +15,8 @@ case "$1" in
     
 		# Fix permissions
 		omv_install_fixperms
+
+		sudo /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-*.list
 		
 		# Add key
 		cat <<EOF | apt-key add -
@@ -49,9 +51,6 @@ n4JsVy0Wqpyqpq6LdquN/lGemDIADE6PyuHyhJKOAq71w0KdjA==
 =+nyf
 -----END PGP PUBLIC KEY BLOCK-----
 EOF
-
-		# Add source
-		echo 'deb http://packages.omv-plugins.org ix main' >/etc/apt/sources.list.d/omv-plugins-org-stable.list
 		
 		cat <<EOF
 
@@ -59,9 +58,11 @@ EOF
 
 !! README !!
 
-Be sure to click on the Check button in the
-System / Plugins menu after this plugin is
-installed.
+For security reason you have to enable this Plugin manually!
+For security reason you have to enable this Plugin manually!
+For security reason you have to enable this Plugin manually!
+For security reason you have to enable this Plugin manually!
+For security reason you have to enable this Plugin manually!
 
 =============================================				
 
