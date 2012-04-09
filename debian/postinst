@@ -17,6 +17,18 @@ case "$1" in
 		omv_install_fixperms
 
 		sudo /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-*.list
+
+		version=$(xmlstarlet sel -t -v //version ${OMV_PRODUCTINFO_FILE} | xmlstarlet unesc)
+		case ${version} in
+			0.2)
+				echo 'deb http://packages.omv-plugins.org ix main' >/etc/apt/sources.list.d/omv-plugins-org-ix.list
+				;;
+			0.3)
+				echo 'deb http://packages.omv-plugins.org omnius main' >/etc/apt/sources.list.d/omv-plugins-org-omnius.list
+				;;
+			*)
+				;;
+		esac
 		
 		# Add key
 		cat <<EOF | apt-key add -
@@ -69,6 +81,7 @@ For security reason you have to enable this Plugin manually!
 
 EOF
 
+		sudo apt-get update
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
