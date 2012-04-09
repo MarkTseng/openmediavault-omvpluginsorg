@@ -148,7 +148,7 @@ class OmvPluginsOrgRpc extends OMVRpc {
 			throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
 		}
 
-		if (!empty($data['use-stable']) and ($this->_extra_repositories[$this->_omv_version_name]['usable'] === true))
+		if (!empty($data['use-stable']) and ($this->_repositories[$this->_omv_version_name]['usable'] === true))
 		{
 			$cmd = "sudo /bin/sh -c \"echo '" . $this->_repositories[$this->_omv_version_name]['source_line'] . "' >" . $this->_repositories[$this->_omv_version_name]['source_file'] . '"';
 			OMVUtil::exec($cmd, $output, $result);
