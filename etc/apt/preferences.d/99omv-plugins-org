@@ -1,8 +1,15 @@
 Package: *
+Pin: release n=ix, origin packages.omv-plugins.org
+Pin-Priority: 995
+
+Package: *
 Pin: release n=donald, origin packages.omv-plugins.org
 Pin-Priority: 995
 
 Package: *
-Pin: release n=ix, origin packages.omv-plugins.org
+Pin: release n=glass, origin packages.omv-plugins.org
 Pin-Priority: 995
 
+Package: *
+Pin: release n=omnius, origin packages.omv-plugins.org
+Pin-Priority: 995

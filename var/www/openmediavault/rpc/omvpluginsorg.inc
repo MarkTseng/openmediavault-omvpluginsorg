@@ -4,7 +4,7 @@
  *
  * @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
  * @author    Marcel Beck <marcel.beck@mbeck.org>
- * @author		Ian Moore <imooreyahoo@gmail.com>
+ * @author    Ian Moore <imooreyahoo@gmail.com>
  * @copyright Copyright (c) 2011-2012 Marcel Beck
  * @copyright Copyright (c) 2011 Ian Moore
  *
@@ -25,100 +25,167 @@ require_once("openmediavault/object.inc");
 require_once("openmediavault/error.inc");
 require_once("openmediavault/util.inc");
 require_once("openmediavault/rpc.inc");
+require_once("openmediavault/product.inc");
 
 class OmvPluginsOrgRpc extends OMVRpc {
 
-	# Source
-	const stableSourceLine = 'deb http://packages.omv-plugins.org ix main';
-	const unstableSourceLine = 'deb http://packages.omv-plugins.org donald main';
+	private $_repositories = array(
+		'ix'     => array(
+			'required_version' => '0.2',
+			'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-ix.list',
+			'source_line'      => 'deb http://packages.omv-plugins.org ix main',
+			'usable'           => false,
+		),
+		'omnius' => array(
+			'required_version' => '0.3',
+			'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-omnius.list',
+			'source_line'      => 'deb http://packages.omv-plugins.org omnius main',
+			'usable'           => false,
+		),
+	);
 
-	# Files
-	const stableSourceFile = '/etc/apt/sources.list.d/omv-plugins-org-stable.list';
-	const unstableSourceFile = '/etc/apt/sources.list.d/omv-plugins-org-unstable.list';
+	private $_extra_repositories = array(
+		'donald' => array(
+			'required_version' => '0.3',
+			'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-donald.list',
+			'source_line'      => 'deb http://packages.omv-plugins.org donald main',
+			'usable'           => false,
+		),
+		'glass'  => array(
+			'required_version' => '0.3',
+			'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-glass.list',
+			'source_line'      => 'deb http://packages.omv-plugins.org glass main',
+			'usable'           => false,
+		),
+	);
 
 	var $methodSchemata = array(
-            "set" => array('{
-                "type":"object",
-                "properties":{
-                    "use-stable":{"type":"boolean"},
-                    "use-unstable":{"type":"boolean"}
-                }
-            }')
+		"set" => array(
+			'{
+					"type":"object",
+					"properties":{
+							"use-stable":{"type":"boolean"},
+							"use-donald":{"type":"boolean"},
+							"use-glass":{"type":"boolean"}
+					}
+			}'
+		)
 	);
+
+	private $_omv_version;
+
+	private $_omv_version_name;
+
+	public function __construct()
+	{
+		parent::__construct();
+		$prd                     = new OMVProduct();
+		$this->_omv_version      = $prd->getVersion();
+		$this->_omv_version_name = strtolower($prd->getVersionName());
+
+		foreach ($this->_repositories as $codename => $settings)
+		{
+			if (substr($this->_omv_version, 0, 2) == $settings['required_version'])
+			{
+				$this->_repositories[$codename]['usable'] = true;
+			}
+		}
+		foreach ($this->_extra_repositories as $codename => $settings)
+		{
+			if (substr($this->_omv_version, 0, 2) == $settings['required_version'])
+			{
+				$this->_extra_repositories[$codename]['usable'] = true;
+			}
+		}
+	}
 
 	/**
 	 * Get settings directly from os
 	 */
-	function get() {
+	function get()
+	{
 
-		return array(
-			'use-stable' => (exec("sudo /bin/sh -c '[ -e ".
-				OmvPluginsOrgRpc::stableSourceFile." ] && echo yes'") == 'yes'),
-            'use-unstable' => (exec("sudo /bin/sh -c '[ -e ".
-                OmvPluginsOrgRpc::unstableSourceFile." ] && echo yes'") == 'yes'),
-
+		$result = array(
+			'use-stable' => false,
+			'use-donald' => false,
+			'use-glass'  => false,
 		);
 
+		if (array_key_exists($this->_omv_version_name, $this->_repositories))
+		{
+			$result['use-stable'] = (exec("sudo /bin/sh -c '[ -e " . $this->_repositories[$this->_omv_version_name]['source_file'] . " ] && echo yes'") == 'yes');
+		}
+
+		foreach ($this->_extra_repositories as $codename => $settings)
+		{
+			$result['use-' . strtolower($codename)] = (exec("sudo /bin/sh -c '[ -e " . $settings['source_file'] . " ] && echo yes'") == 'yes');
+		}
+		return $result;
 	}
 
 	/**
-	* Set settings
-	*/
-	function set($data) {
+	 * Set settings
+	 */
+	function set($data)
+	{
+		// Check incoming data
+		$this->validateParams(__METHOD__, func_get_args());
 
-       // Check incoming data
-        $this->validateParams(__METHOD__,func_get_args());
+		$this->validateSession();
 
-        $this->validateSession();
+		// Is the user an admin or the same as the one configured for the cert?
+		if (!$this->hasRole(OMV_ROLE_ADMINISTRATOR))
+		{
+			throw new OMVException(OMVErrorMsg::E_RPC_SERVICE_INVALID_PERMISSION);
+		}
 
-        // Is the user an admin or the same as the one configured for the cert?
-        if (!$this->hasRole(OMV_ROLE_ADMINISTRATOR)) {
-            throw new OMVException(OMVErrorMsg::E_RPC_SERVICE_INVALID_PERMISSION);
-        }
+		$this->commitSession();
 
-        $this->commitSession();
+		$cmd = "sudo /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-*.list";
+		OMVUtil::exec($cmd, $output, $result);
+		if ($result !== 0)
+		{
+			throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
+		}
 
-		$econf = $this->get();
+		if (!empty($data['use-stable']))
+		{
+			$cmd = "sudo /bin/sh -c \"echo '" . $this->_repositories[$this->_omv_version_name]['source_line'] . "' >" . $this->_repositories[$this->_omv_version_name]['source_file'] . '"';
+			OMVUtil::exec($cmd, $output, $result);
+			if ($result !== 0)
+			{
+				throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
+			}
+		}
 
-		// Stable sources
-		if(!empty($data['use-stable'])) {
-            $cmd = "sudo /bin/sh -c \"echo '". OmvPluginsOrgRpc::stableSourceLine ."' >".
-                OmvPluginsOrgRpc::stableSourceFile.'"';
-        } else {
-            $cmd = "sudo /bin/rm -f ". OmvPluginsOrgRpc::stableSourceFile;
-        }
-        OMVUtil::exec($cmd, $output, $result);
-        if ($result !== 0) {
-            throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
-              $cmd, implode("\n", $output));
-        }
+		if (!empty($data['use-donald']))
+		{
+			$cmd = "sudo /bin/sh -c \"echo '" . $this->_extra_repositories['donald']['source_line'] . "' >" . $this->_extra_repositories['donald']['source_file'] . '"';
+			OMVUtil::exec($cmd, $output, $result);
+			if ($result !== 0)
+			{
+				throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
+			}
+		}
 
-        // Unstable sources
-        if(!empty($data['use-unstable'])) {
-            $cmd = "sudo /bin/sh -c \"echo '". OmvPluginsOrgRpc::unstableSourceLine ."' >".
-                OmvPluginsOrgRpc::unstableSourceFile.'"';
-        } else {
-            $cmd = "sudo /bin/rm -f ". OmvPluginsOrgRpc::unstableSourceFile;
-        }
-        OMVUtil::exec($cmd, $output, $result);
-        if ($result !== 0) {
-            throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
-              $cmd, implode("\n", $output));
-        }
+		if (!empty($data['use-glass']))
+		{
+			$cmd = "sudo /bin/sh -c \"echo '" . $this->_extra_repositories['glass']['source_line'] . "' >" . $this->_extra_repositories['glass']['source_file'] . '"';
+			OMVUtil::exec($cmd, $output, $result);
+			if ($result !== 0)
+			{
+				throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
+			}
+		}
 
-		// apt update?
-		if(empty($econf['use-stable']) != empty($data['use-stable']) ||
-			empty($econf['use-unstable']) != empty($data['use-unstable'])) {
-
-			$cmd = 'sudo apt-get update';
-
-        	OMVUtil::exec($cmd, $output, $result);
-	        if ($result !== 0) {
-    	        throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
-	              $cmd, implode("\n", $output));
-	        }
-
+		$cmd = 'sudo apt-get update';
+		OMVUtil::exec($cmd, $output, $result);
+		if ($result !== 0)
+		{
+			throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
+				$cmd, implode("\n", $output));
 		}
 	}
+
 }
 
