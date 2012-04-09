@@ -70,18 +70,15 @@ EOF
 
 !! README !!
 
-For security reason you have to enable this Plugin manually!
-For security reason you have to enable this Plugin manually!
-For security reason you have to enable this Plugin manually!
-For security reason you have to enable this Plugin manually!
-For security reason you have to enable this Plugin manually!
+Be sure to click on the Check button in the
+System / Plugins menu after this plugin is
+installed.
 
 =============================================				
 
 
 EOF
 
-		sudo apt-get update
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
