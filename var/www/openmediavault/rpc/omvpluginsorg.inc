@@ -85,14 +85,14 @@ class OmvPluginsOrgRpc extends OMVRpc {
 
 		foreach ($this->_repositories as $codename => $settings)
 		{
-			if (substr($this->_omv_version, 0, 2) == $settings['required_version'])
+			if (substr($this->_omv_version, 0, 3) == $settings['required_version'])
 			{
 				$this->_repositories[$codename]['usable'] = true;
 			}
 		}
 		foreach ($this->_extra_repositories as $codename => $settings)
 		{
-			if (substr($this->_omv_version, 0, 2) == $settings['required_version'])
+			if (substr($this->_omv_version, 0, 3) == $settings['required_version'])
 			{
 				$this->_extra_repositories[$codename]['usable'] = true;
 			}
