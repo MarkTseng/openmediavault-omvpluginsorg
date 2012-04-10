@@ -1,3 +1,9 @@
+openmediavault-omvpluginsorg (0.2.2.1) stable; urgency=low
+
+  * Github Issue Fix #1 - Typo: double entry of the word plugins
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Tue, 10 Apr 2012 18:16:01 +0200
+
 openmediavault-omvpluginsorg (0.2.2) stable; urgency=low
 
   * Change - Default enable stable repository

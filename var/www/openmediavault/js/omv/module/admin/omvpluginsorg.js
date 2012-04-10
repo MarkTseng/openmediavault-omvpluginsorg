@@ -68,7 +68,7 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 								name      :"use-stable",
 								fieldLabel:"Stable",
 								checked   :false,
-								boxLabel  :"Use the list of plugins plugins provided in the stable repository at OMV-Plugins.org.",
+								boxLabel  :"Use the list of plugins provided in the stable repository at OMV-Plugins.org.",
 								inputValue:1
 							}
 						]
