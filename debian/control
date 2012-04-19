@@ -7,5 +7,5 @@ Standards-Version: 3.6.10
 
 Package: openmediavault-omvpluginsorg
 Architecture: all
-Depends: openmediavault (>= 0.2.6.5)
+Depends: openmediavault (>= 0.3)
 Description: OMV-Plugins.org Package Repositories for OpenMediaVault
