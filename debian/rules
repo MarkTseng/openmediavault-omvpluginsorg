@@ -1,29 +1,25 @@
 #!/usr/bin/make -f
 
-REVISION := $(shell head -1 debian/changelog | sed 's/.*(//;s/).*//;s/.*-//')
+include ../openmediavault.mk
 
-build: build-stamp
-build-stamp:
-	dh_testdir
-	touch build-stamp
-
-clean: 
+clean:
 	dh_testdir
 	dh_testroot
-	rm -f build-stamp
-	dh_clean 
-	
-install: build
+	dh_clean
+
+install:
 	dh_testdir
 	dh_testroot
 	dh_prep
 	dh_installdirs
 	dh_install
 
-# Build architecture-independent files here.
-binary-indep: build install
+binary-indep: install omv_clean_scm
 	dh_testdir
 	dh_testroot
+	dh_installchangelogs
+	dh_installdebconf
+	dh_lintian
 	dh_link
 	dh_compress
 	dh_fixperms
@@ -32,6 +28,8 @@ binary-indep: build install
 	dh_md5sums
 	dh_builddeb
 
+binary-arch: install
+# We have nothing to do by default.
 
-binary: binary-indep
-.PHONY: build clean binary-indep install
+binary: binary-indep binary-arch
+.PHONY: clean binary-indep binary-arch binary install
