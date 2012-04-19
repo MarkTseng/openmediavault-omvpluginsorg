@@ -28,7 +28,7 @@ Ext.ns("OMV.Module.System");
 
 // Register the menu.
 OMV.NavigationPanelMgr.registerMenu("system", "OmvPluginsOrg", {
-	text:"OMV-Plugins.org",
+	text:_("OMV-Plugins.org"),
 	icon:"images/omvpluginsorg.png"
 });
 
@@ -51,14 +51,14 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 		return [
 			{
 				xtype   :"fieldset",
-				title   :"OMV-Plugins.org",
+				title   :_("OMV-Plugins.org"),
 				defaults:{
 					labelSeparator:""
 				},
 				items   :[
 					{
 						xtype   :"fieldset",
-						title   :"General settings",
+						title   :_("General settings"),
 						defaults:{
 							labelSeparator:""
 						},
@@ -66,16 +66,16 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 							{
 								xtype     :"checkbox",
 								name      :"use-stable",
-								fieldLabel:"Stable",
+								fieldLabel:_("Stable"),
 								checked   :false,
-								boxLabel  :"Use the list of plugins provided in the stable repository at OMV-Plugins.org.",
+								boxLabel  :_("Use the list of plugins provided in the stable repository at OMV-Plugins.org."),
 								inputValue:1
 							}
 						]
 					},
 					{
 						xtype   :"fieldset",
-						title   :"Repositories",
+						title   :_("Repositories"),
 						defaults:{
 							labelSeparator:""
 						},
@@ -83,39 +83,39 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 							{
 								xtype     :"checkbox",
 								name      :"use-donald",
-								fieldLabel:"Donald",
+								fieldLabel:_("Donald"),
 								checked   :false,
-								boxLabel  :"Use the list of plugins provided in the Donald (unstable/testing) repository at OMV-Plugins.org.",
+								boxLabel  :_("Use the list of plugins provided in the Donald (unstable/testing) repository at OMV-Plugins.org."),
 								inputValue:1
 							},
 							{
 								xtype     :"checkbox",
 								name      :"use-glass",
-								fieldLabel:"Glass",
+								fieldLabel:_("Glass"),
 								checked   :false,
-								boxLabel  :"Use the list of plugins provided in the Glass (experimental) repository at OMV-Plugins.org.",
+								boxLabel  :_("Use the list of plugins provided in the Glass (experimental) repository at OMV-Plugins.org."),
 								inputValue:1
 							},
 							{
 								fieldLabel:" ",
-								html      :"<b>Glass can break the system. You have to know what you're doing here.</b>"
+								html      :_("<b>Glass can break the system. You have to know what you're doing here.</b>")
 							},
 							{
 								fieldLabel:" ",
-								html      :"<b>Donald and Glass only supports the last OMV version.<b>"
+								html      :_("<b>Donald and Glass only supports the last OMV version.<b>")
 							}
 						]
 					},
 					{
 						xtype   :"fieldset",
-						title   :"Informations",
+						title   :_("Informations"),
 						defaults:{
 							labelSeparator:""
 						},
 						items   :[
 							{
 								fieldLabel:" ",
-								html      :"If more then one repository is enabled, the package with a higher version number will be installed."
+								html      :_("If more then one repository is enabled, the package with a higher version number will be installed.")
 							}
 						]
 					}
