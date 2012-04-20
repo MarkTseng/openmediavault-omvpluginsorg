@@ -115,7 +115,7 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 						items   :[
 							{
 								fieldLabel:" ",
-								html      :_("If more then one repository is enabled, the package with a higher version number will be installed.")
+								html      :_("If more than one repository is enabled, the package with a higher version number will be installed.")
 							}
 						]
 					}
