@@ -32,7 +32,7 @@ msgstr ""
 msgid "Glass"
 msgstr ""
 
-msgid "If more then one repository is enabled, the package with a higher version number will be installed."
+msgid "If more than one repository is enabled, the package with a higher version number will be installed."
 msgstr ""
 
 msgid "Informations"
