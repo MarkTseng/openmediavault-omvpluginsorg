@@ -1,3 +1,9 @@
+openmediavault-omvpluginsorg (0.2.3) stable; urgency=low
+
+  * Added Translations
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Mon, 23 Apr 2012 21:24:26 +0200
+
 openmediavault-omvpluginsorg (0.2.2.1) stable; urgency=low
 
   * Github Issue Fix #1 - Typo: double entry of the word plugins
