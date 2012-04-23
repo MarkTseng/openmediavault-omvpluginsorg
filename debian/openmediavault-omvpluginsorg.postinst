@@ -13,8 +13,17 @@ case "$1" in
 
     configure)
     
-		# Fix permissions
+		########################################################################
+		# Update file permissions.
+		########################################################################
+		echo "Updating permissions"
 		omv_install_fixperms
+
+		########################################################################
+		# Install locale files.
+		########################################################################
+		echo "Install locale files ..."
+		omv_install_locale
 
 		/bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-*.list
 
