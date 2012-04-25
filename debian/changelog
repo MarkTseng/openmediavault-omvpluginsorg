@@ -1,3 +1,9 @@
+openmediavault-omvpluginsorg (0.3) stable; urgency=low
+
+  * Translations
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Wed, 25 Apr 2012 19:20:47 +0200
+
 openmediavault-omvpluginsorg (0.2.3) stable; urgency=low
 
   * Added Translations
