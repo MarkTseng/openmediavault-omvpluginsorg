@@ -1,3 +1,9 @@
+openmediavault-omvpluginsorg (0.3.1) stable; urgency=low
+
+  * Made glass and donald usable in OMV 0.3
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Sat, 05 May 2012 18:19:49 +0200
+
 openmediavault-omvpluginsorg (0.3) stable; urgency=low
 
   * Translations

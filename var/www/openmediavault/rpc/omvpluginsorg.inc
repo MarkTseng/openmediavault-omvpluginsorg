@@ -46,13 +46,13 @@ class OmvPluginsOrgRpc extends OMVRpc {
 
 	private $_extra_repositories = array(
 		'donald' => array(
-			'required_version' => '0.2',
+			'required_version' => '0.3',
 			'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-donald.list',
 			'source_line'      => 'deb http://packages.omv-plugins.org donald main',
 			'usable'           => false,
 		),
 		'glass'  => array(
-			'required_version' => '0.2',
+			'required_version' => '0.3s',
 			'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-glass.list',
 			'source_line'      => 'deb http://packages.omv-plugins.org glass main',
 			'usable'           => false,
