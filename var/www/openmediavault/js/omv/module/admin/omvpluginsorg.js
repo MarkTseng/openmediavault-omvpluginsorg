@@ -36,18 +36,16 @@ OMV.NavigationPanelMgr.registerMenu("system", "OmvPluginsOrg", {
  * @class OMV.Module.System.OmvPluginsOrg
  * @derived OMV.FormPanelExt
  */
-OMV.Module.System.OmvPluginsOrg = function (config)
-{
+OMV.Module.System.OmvPluginsOrg = function (config) {
 	var initialConfig = {
 		rpcService:"OmvPluginsOrg"
 	};
 	Ext.apply(initialConfig, config);
 	OMV.Module.System.OmvPluginsOrg.superclass.constructor.call(this,
-																															initialConfig);
+					initialConfig);
 };
 Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
-	getFormItems:function ()
-	{
+	getFormItems:function () {
 		return [
 			{
 				xtype   :"fieldset",

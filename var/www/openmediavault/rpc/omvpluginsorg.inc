@@ -134,7 +134,7 @@ class OmvPluginsOrgRpc extends OMVRpc {
 		$this->validateSession();
 
 		// Is the user an admin or the same as the one configured for the cert?
-		if (!$this->hasRole(OMV_ROLE_ADMINISTRATOR))
+		if (! $this->hasRole(OMV_ROLE_ADMINISTRATOR))
 		{
 			throw new OMVException(OMVErrorMsg::E_RPC_SERVICE_INVALID_PERMISSION);
 		}
@@ -148,7 +148,7 @@ class OmvPluginsOrgRpc extends OMVRpc {
 			throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
 		}
 
-		if (!empty($data['use-stable']) and ($this->_repositories[$this->_omv_version_name]['usable'] === true))
+		if (! empty($data['use-stable']) and ($this->_repositories[$this->_omv_version_name]['usable'] === true))
 		{
 			$cmd = "sudo /bin/sh -c \"echo '" . $this->_repositories[$this->_omv_version_name]['source_line'] . "' >" . $this->_repositories[$this->_omv_version_name]['source_file'] . '"';
 			OMVUtil::exec($cmd, $output, $result);
@@ -158,7 +158,7 @@ class OmvPluginsOrgRpc extends OMVRpc {
 			}
 		}
 
-		if (!empty($data['use-donald']) and ($this->_extra_repositories['donald']['usable'] === true))
+		if (! empty($data['use-donald']) and ($this->_extra_repositories['donald']['usable'] === true))
 		{
 			$cmd = "sudo /bin/sh -c \"echo '" . $this->_extra_repositories['donald']['source_line'] . "' >" . $this->_extra_repositories['donald']['source_file'] . '"';
 			OMVUtil::exec($cmd, $output, $result);
@@ -168,7 +168,7 @@ class OmvPluginsOrgRpc extends OMVRpc {
 			}
 		}
 
-		if (!empty($data['use-glass']) and ($this->_extra_repositories['glass']['usable'] === true))
+		if (! empty($data['use-glass']) and ($this->_extra_repositories['glass']['usable'] === true))
 		{
 			$cmd = "sudo /bin/sh -c \"echo '" . $this->_extra_repositories['glass']['source_line'] . "' >" . $this->_extra_repositories['glass']['source_file'] . '"';
 			OMVUtil::exec($cmd, $output, $result);
@@ -183,7 +183,7 @@ class OmvPluginsOrgRpc extends OMVRpc {
 		if ($result !== 0)
 		{
 			throw new OMVException(OMVErrorMsg::E_EXEC_FAILED,
-				$cmd, implode("\n", $output));
+														 $cmd, implode("\n", $output));
 		}
 	}
 
