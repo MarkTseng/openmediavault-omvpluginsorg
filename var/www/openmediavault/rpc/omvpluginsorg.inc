@@ -52,7 +52,7 @@ class OmvPluginsOrgRpc extends OMVRpc {
 			'usable'           => false,
 		),
 		'glass'  => array(
-			'required_version' => '0.3s',
+			'required_version' => '0.3',
 			'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-glass.list',
 			'source_line'      => 'deb http://packages.omv-plugins.org glass main',
 			'usable'           => false,
