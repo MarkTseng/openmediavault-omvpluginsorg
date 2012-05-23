@@ -1,3 +1,9 @@
+openmediavault-omvpluginsorg (0.3.3) stable; urgency=low
+
+  * Various fixes
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Wed, 23 May 2012 18:30:35 +0200
+
 openmediavault-omvpluginsorg (0.3.2) stable; urgency=low
 
   * Copyright update
