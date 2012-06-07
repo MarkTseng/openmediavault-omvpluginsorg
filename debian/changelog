@@ -1,3 +1,33 @@
+openmediavault-omvpluginsorg (0.3.4) stable; urgency=low
+
+  * Update locale
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Thu, 07 Jun 2012 20:16:04 +0200
+
+openmediavault-omvpluginsorg (0.3.3) stable; urgency=low
+
+  * Various fixes
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Wed, 23 May 2012 18:30:35 +0200
+
+openmediavault-omvpluginsorg (0.3.2) stable; urgency=low
+
+  * Copyright update
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Sat, 12 May 2012 11:00:19 +0200
+
+openmediavault-omvpluginsorg (0.3.1) stable; urgency=low
+
+  * Made glass and donald usable in OMV 0.3
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Sat, 05 May 2012 18:19:49 +0200
+
+openmediavault-omvpluginsorg (0.3) stable; urgency=low
+
+  * Translations
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Wed, 25 Apr 2012 19:20:47 +0200
+
 openmediavault-omvpluginsorg (0.2.3) stable; urgency=low
 
   * Added Translations

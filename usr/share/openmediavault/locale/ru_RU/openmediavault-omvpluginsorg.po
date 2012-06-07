@@ -4,13 +4,14 @@
 # 
 # Translators:
 #   <arturmon82@gmail.com>, 2012.
+#   <ffrants@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: OMV Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-04-19 22:24+0200\n"
-"PO-Revision-Date: 2012-04-20 13:35+0000\n"
-"Last-Translator: arturmon82 <arturmon82@gmail.com>\n"
+"POT-Creation-Date: 2012-06-07 19:25+0200\n"
+"PO-Revision-Date: 2012-04-28 12:00+0000\n"
+"Last-Translator: mictian <ffrants@gmail.com>\n"
 "Language-Team: Russian (http://www.transifex.net/projects/p/OMVPlugins/language/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,11 +20,11 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
 
 msgid "<b>Donald and Glass only supports the last OMV version.<b>"
-msgstr "<b>Donald и Glass только поддерживают последнюю версию OMV.<b>"
+msgstr "<b>Donald и Glass поддерживают только последнюю версию OMV.<b>"
 
 msgid ""
 "<b>Glass can break the system. You have to know what you're doing here.</b>"
-msgstr "<b>Glass может повредить систему. Должны знать то, что делаете здесь.</b>"
+msgstr "<b>Glass может повредить систему. Вы должны быть уверены что делаете.</b>"
 
 msgid "Donald"
 msgstr "Donald"
@@ -37,7 +38,7 @@ msgstr "Glass"
 msgid ""
 "If more than one repository is enabled, the package with a higher version "
 "number will be installed."
-msgstr "Если несколько репозитариев будут включены, то пакет с более высоким номером версии будет установлен."
+msgstr "Если несколько репозиториев будут включены, то пакет с более высоким номером версии будет установлен."
 
 msgid "Informations"
 msgstr "Информация"
@@ -46,7 +47,7 @@ msgid "OMV-Plugins.org"
 msgstr "OMV-Plugins.org"
 
 msgid "Repositories"
-msgstr "Репозитарии"
+msgstr "Репозитории"
 
 msgid "Stable"
 msgstr "Стабильный"
@@ -54,14 +55,14 @@ msgstr "Стабильный"
 msgid ""
 "Use the list of plugins provided in the Donald (unstable/testing) repository"
 " at OMV-Plugins.org."
-msgstr "Использование списка плагинов, из Donald (нестабильный / тестирование) репозитария в OMV-Plugins.org."
+msgstr "Использовать список плагинов из Donald (нестабильный / тестируемый) репозиторий в OMV-Plugins.org."
 
 msgid ""
 "Use the list of plugins provided in the Glass (experimental) repository at "
 "OMV-Plugins.org."
-msgstr "Использование списка плагинов, из Glass (экспериментальном) репозитария в OMV-Plugins.org."
+msgstr "Использовать список плагинов из Glass (экспериментальный) репозиторий в OMV-Plugins.org."
 
 msgid ""
 "Use the list of plugins provided in the stable repository at OMV-"
 "Plugins.org."
-msgstr "Используйте список плагинов,из стабильного репозитария в OMV-Plugins.org."
+msgstr "Использовать список плагинов,из стабильного репозитория в OMV-Plugins.org."

@@ -1,8 +1,23 @@
-#!/bin/bash
+#!/bin/sh
 #
-# $Id: postinst 38 2011-11-26 16:56:14Z imooreyahoo@gmail.com $
+# This file is part of OpenMediaVault-mysql.
 #
-# see: dh_installdeb(1)
+# @license   http://www.gnu.org/licenses/gpl.html GPL Version 3
+# @author    Marcel Beck <marcel.beck@mbeck.org>
+# @copyright Copyright (c) 2011-2012 Marcel Beck
+#
+# OpenMediaVault is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# OpenMediaVault is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with OpenMediaVault. If not, see <http://www.gnu.org/licenses/>.
 
 set -e
 
@@ -13,21 +28,27 @@ case "$1" in
 
     configure)
     
-		# Fix permissions
+		########################################################################
+		# Update file permissions.
+		########################################################################
+		echo "Updating permissions"
 		omv_install_fixperms
+
+		########################################################################
+		# Install locale files.
+		########################################################################
+		echo "Install locale files ..."
+		omv_install_locale
 
 		/bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-*.list
 
-		version=$(xmlstarlet sel -t -v //version ${OMV_PRODUCTINFO_FILE} | xmlstarlet unesc)
-		if [ ${#version} -gt 2 ]; then
-			version=${version:0:3}
-		fi
+		versionname=$(xmlstarlet sel -t -v //versionname ${OMV_PRODUCTINFO_FILE} | xmlstarlet unesc)
 
-		case ${version} in
-			0.2)
+		case ${versionname} in
+			"Ix")
 				echo 'deb http://packages.omv-plugins.org ix main' >/etc/apt/sources.list.d/omv-plugins-org-ix.list
 				;;
-			0.3)
+			"Omnius")
 				echo 'deb http://packages.omv-plugins.org omnius main' >/etc/apt/sources.list.d/omv-plugins-org-omnius.list
 				;;
 		esac

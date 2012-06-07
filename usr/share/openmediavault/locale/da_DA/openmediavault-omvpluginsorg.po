@@ -3,33 +3,33 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
-# Raul Fernandez Garcia <raulfg3@gmail.com>, 2012.
+# Stefan Thrane Overby <stoverby@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: OMV Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-07 19:25+0200\n"
-"PO-Revision-Date: 2012-04-25 18:52+0000\n"
-"Last-Translator: Raul Fernandez Garcia <raulfg3@gmail.com>\n"
-"Language-Team: Spanish (Spain) (http://www.transifex.net/projects/p/OMVPlugins/language/es_ES/)\n"
+"PO-Revision-Date: 2012-04-24 20:38+0000\n"
+"Last-Translator: Stefan Thrane Overby <stoverby@gmail.com>\n"
+"Language-Team: Danish (http://www.transifex.net/projects/p/OMVPlugins/language/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
+"Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 msgid "<b>Donald and Glass only supports the last OMV version.<b>"
-msgstr "<b>Donald y Glass solo soportan la ultima versión de OMV.<b>"
+msgstr "<b>Donald og Glass er kun understøttet af seneste OMV version.<b> "
 
 msgid ""
 "<b>Glass can break the system. You have to know what you're doing here.</b>"
-msgstr "<b>Glass puede romper el sistema. Debe ser consciente y saber lo que esta haciendo.</b>"
+msgstr "<b>Glass kan ødelægge systemet. Du skal vide hvad du laver her.</b>"
 
 msgid "Donald"
 msgstr "Donald"
 
 msgid "General settings"
-msgstr "Opciones generales"
+msgstr "Generelle indstillinger"
 
 msgid "Glass"
 msgstr "Glass"
@@ -37,31 +37,31 @@ msgstr "Glass"
 msgid ""
 "If more than one repository is enabled, the package with a higher version "
 "number will be installed."
-msgstr "Si más de un repositorio está habilitado, el paquetre con la mayor versión será el instalado"
+msgstr "Hvis mere end et arkiv er aktiveret, vil pakken med et højere versionsnummer blive installeret."
 
 msgid "Informations"
-msgstr "Información"
+msgstr "Oplysninger"
 
 msgid "OMV-Plugins.org"
 msgstr "OMV-Plugins.org"
 
 msgid "Repositories"
-msgstr "Repositorios"
+msgstr "Arkiver"
 
 msgid "Stable"
-msgstr "Estable"
+msgstr "Stabil"
 
 msgid ""
 "Use the list of plugins provided in the Donald (unstable/testing) repository"
 " at OMV-Plugins.org."
-msgstr "use el listado de plugin suministrados en el repositorio Donald (unstable/testing) en: OMV-Plugins.org."
+msgstr "Brug listen af plugins, der i Donald (ustabile/test) arkivet på OMV-Plugins.org."
 
 msgid ""
 "Use the list of plugins provided in the Glass (experimental) repository at "
 "OMV-Plugins.org."
-msgstr "use el listado de plugin suministrados en el repositorio Glass (experimental) en: OMV-Plugins.org."
+msgstr "Brug listen af plugins, der i Glass (eksperimentel) arkivet på OMV-Plugins.org."
 
 msgid ""
 "Use the list of plugins provided in the stable repository at OMV-"
 "Plugins.org."
-msgstr "Use el listado de Plugin facilitados por el repositorio estable de: OMV-Plugins.org."
+msgstr "Brug listen af plugins, der i det stabile arkiv på OMV-Plugins.org."
