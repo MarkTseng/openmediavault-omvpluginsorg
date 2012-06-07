@@ -1,57 +1,66 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
-#, fuzzy
+# 
+# Translators:
 msgid ""
 msgstr ""
-"Project-Id-Version: openmediavault-omvpluginsorg\n"
+"Project-Id-Version: OMV Plugins\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-05-26 09:43+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2012-06-07 19:25+0200\n"
+"PO-Revision-Date: 2012-04-20 11:12+0000\n"
+"Last-Translator: Marcel Beck <fo3nik5@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 msgid "<b>Donald and Glass only supports the last OMV version.<b>"
-msgstr ""
+msgstr "<b>Donald and Glass only supports the last OMV version.<b>"
 
-msgid "<b>Glass can break the system. You have to know what you're doing here.</b>"
-msgstr ""
+msgid ""
+"<b>Glass can break the system. You have to know what you're doing here.</b>"
+msgstr "<b>Glass can break the system. You have to know what you're doing here.</b>"
 
 msgid "Donald"
-msgstr ""
+msgstr "Donald"
 
 msgid "General settings"
-msgstr ""
+msgstr "General settings"
 
 msgid "Glass"
-msgstr ""
+msgstr "Glass"
 
-msgid "If more than one repository is enabled, the package with a higher version number will be installed."
-msgstr ""
+msgid ""
+"If more than one repository is enabled, the package with a higher version "
+"number will be installed."
+msgstr "If more than one repository is enabled, the package with a higher version number will be installed."
 
 msgid "Informations"
-msgstr ""
+msgstr "Informations"
 
 msgid "OMV-Plugins.org"
-msgstr ""
+msgstr "OMV-Plugins.org"
 
 msgid "Repositories"
-msgstr ""
+msgstr "Repositories"
 
 msgid "Stable"
-msgstr ""
+msgstr "Stable"
 
-msgid "Use the list of plugins provided in the Donald (unstable/testing) repository at OMV-Plugins.org."
-msgstr ""
+msgid ""
+"Use the list of plugins provided in the Donald (unstable/testing) repository"
+" at OMV-Plugins.org."
+msgstr "Use the list of plugins provided in the Donald (unstable/testing) repository at OMV-Plugins.org."
 
-msgid "Use the list of plugins provided in the Glass (experimental) repository at OMV-Plugins.org."
-msgstr ""
+msgid ""
+"Use the list of plugins provided in the Glass (experimental) repository at "
+"OMV-Plugins.org."
+msgstr "Use the list of plugins provided in the Glass (experimental) repository at OMV-Plugins.org."
 
-msgid "Use the list of plugins provided in the stable repository at OMV-Plugins.org."
-msgstr ""
+msgid ""
+"Use the list of plugins provided in the stable repository at OMV-"
+"Plugins.org."
+msgstr "Use the list of plugins provided in the stable repository at OMV-Plugins.org."
