@@ -3,13 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 # 
 # Translators:
+# Henrik Sandström <henrik.sandstroem@gmail.com>, 2012.
 msgid ""
 msgstr ""
 "Project-Id-Version: OMV Plugins\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2012-06-07 19:25+0200\n"
-"PO-Revision-Date: 2012-04-20 09:34+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2012-08-26 09:23+0000\n"
+"Last-Translator: Henrik Sandström <henrik.sandstroem@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/projects/p/OMVPlugins/language/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,49 +19,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 
 msgid "<b>Donald and Glass only supports the last OMV version.<b>"
-msgstr ""
+msgstr "<b>Donald och Glass fungerar bara till senaste OMV-versionen.<b>"
 
 msgid ""
 "<b>Glass can break the system. You have to know what you're doing here.</b>"
-msgstr ""
+msgstr "<b>Glass kan förstöra systemet. Du måste veta vad du gör här.</b>"
 
 msgid "Donald"
-msgstr ""
+msgstr "Donald"
 
 msgid "General settings"
-msgstr ""
+msgstr "Allmänna inställningar"
 
 msgid "Glass"
-msgstr ""
+msgstr "Glass"
 
 msgid ""
 "If more than one repository is enabled, the package with a higher version "
 "number will be installed."
-msgstr ""
+msgstr "Om fler än en lista är aktiverad, kommer paketet med det högsta versions-numret att installeras. "
 
 msgid "Informations"
-msgstr ""
+msgstr "Information"
 
 msgid "OMV-Plugins.org"
-msgstr ""
+msgstr "OMV-Plugins.org"
 
 msgid "Repositories"
-msgstr ""
+msgstr "Förvaringsplats"
 
 msgid "Stable"
-msgstr ""
+msgstr "Stabil"
 
 msgid ""
 "Use the list of plugins provided in the Donald (unstable/testing) repository"
 " at OMV-Plugins.org."
-msgstr ""
+msgstr "Använd listan över tillägg som finns i Donald (ostabil/test) hos OMV-Plugins.org."
 
 msgid ""
 "Use the list of plugins provided in the Glass (experimental) repository at "
 "OMV-Plugins.org."
-msgstr ""
+msgstr "Använd listan över tillägg som finns i Glass (experiment) hos OMV-Plugins.org."
 
 msgid ""
 "Use the list of plugins provided in the stable repository at OMV-"
 "Plugins.org."
-msgstr ""
+msgstr "Använd listan över tillägg som finns i den stabila tilläggs-listan hos OMV-Plugins.org."
