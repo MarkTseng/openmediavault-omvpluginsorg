@@ -13,3 +13,7 @@ Pin-Priority: 995
 Package: *
 Pin: release n=omnius, origin packages.omv-plugins.org
 Pin-Priority: 995
+
+Package: *
+Pin: release n=fedaykin, origin packages.omv-plugins.org
+Pin-Priority: 995

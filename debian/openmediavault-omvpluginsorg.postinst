@@ -27,7 +27,7 @@ set -e
 case "$1" in
 
     configure)
-    
+
 		########################################################################
 		# Update file permissions.
 		########################################################################
@@ -51,8 +51,11 @@ case "$1" in
 			"Omnius")
 				echo 'deb http://packages.omv-plugins.org omnius main' >/etc/apt/sources.list.d/omv-plugins-org-omnius.list
 				;;
+			"Fedaykin")
+                echo 'deb http://packages.omv-plugins.org omnius main' >/etc/apt/sources.list.d/omv-plugins-org-omnius.list
+                ;;
 		esac
-		
+
 		# Add key
 		cat <<EOF | apt-key add -
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -86,7 +89,7 @@ n4JsVy0Wqpyqpq6LdquN/lGemDIADE6PyuHyhJKOAq71w0KdjA==
 =+nyf
 -----END PGP PUBLIC KEY BLOCK-----
 EOF
-		
+
 		cat <<EOF
 
 =============================================
@@ -97,7 +100,7 @@ Be sure to click on the Check button in the
 System / Plugins menu after this plugin is
 installed.
 
-=============================================				
+=============================================
 
 
 EOF

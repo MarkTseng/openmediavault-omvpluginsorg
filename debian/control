@@ -8,5 +8,5 @@ Homepage: http://omv-plugins.org/
 
 Package: openmediavault-omvpluginsorg
 Architecture: all
-Depends: openmediavault (>= 0.3)
+Depends: openmediavault (>= 0.4)
 Description: OMV-Plugins.org Package Repositories for OpenMediaVault

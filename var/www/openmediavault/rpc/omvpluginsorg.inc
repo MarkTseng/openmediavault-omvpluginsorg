@@ -42,6 +42,12 @@ class OmvPluginsOrgRpc extends OMVRpc {
 			'source_line'      => 'deb http://packages.omv-plugins.org omnius main',
 			'usable'           => false,
 		),
+        'fedaykin' => array(
+            'required_version' => '0.4',
+            'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-fedaykin.list',
+            'source_line'      => 'deb http://packages.omv-plugins.org fedaykin main',
+            'usable'           => false,
+        ),
 	);
 
 	private $_extra_repositories = array(
