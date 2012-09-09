@@ -52,7 +52,7 @@ case "$1" in
 				echo 'deb http://packages.omv-plugins.org omnius main' >/etc/apt/sources.list.d/omv-plugins-org-omnius.list
 				;;
 			"Fedaykin")
-                echo 'deb http://packages.omv-plugins.org omnius main' >/etc/apt/sources.list.d/omv-plugins-org-omnius.list
+                echo 'deb http://packages.omv-plugins.org fedaykin main' >/etc/apt/sources.list.d/omv-plugins-org-fedaykin.list
                 ;;
 		esac
 
