@@ -28,18 +28,6 @@ case "$1" in
 
     configure)
 
-		########################################################################
-		# Update file permissions.
-		########################################################################
-		echo "Updating permissions"
-		omv_install_fixperms
-
-		########################################################################
-		# Install locale files.
-		########################################################################
-		echo "Install locale files ..."
-		omv_install_locale
-
 		/bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-*.list
 
 		versionname=$(xmlstarlet sel -t -v //versionname ${OMV_PRODUCTINFO_FILE} | xmlstarlet unesc)
