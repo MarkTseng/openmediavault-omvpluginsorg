@@ -30,22 +30,29 @@ require_once("openmediavault/product.inc");
 class OmvPluginsOrgRpc extends OMVRpc
 {
     private $_repositories = array(
-        'ix'       => array(
+        'ix'             => array(
             'required_version' => '0.2',
             'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-ix.list',
             'source_line'      => 'deb http://packages.omv-plugins.org ix main',
             'usable'           => false,
         ),
-        'omnius'   => array(
+        'omnius'         => array(
             'required_version' => '0.3',
             'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-omnius.list',
             'source_line'      => 'deb http://packages.omv-plugins.org omnius main',
             'usable'           => false,
         ),
-        'fedaykin' => array(
+        'fedaykin'       => array(
             'required_version' => '0.4',
             'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-fedaykin.list',
             'source_line'      => 'deb http://packages.omv-plugins.org fedaykin main',
+            'usable'           => false,
+        ),
+        'fedaykin-armhf' => array(
+            'required_version' => '0.4',
+            'architecture'     => 'armhf',
+            'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-fedaykin-armhf.list',
+            'source_line'      => 'deb http://packages.omv-plugins.org fedaykin-armhf main',
             'usable'           => false,
         ),
     );
@@ -91,7 +98,19 @@ class OmvPluginsOrgRpc extends OMVRpc
 
         foreach ($this->_repositories as $codename => $settings) {
             if (substr($this->_omv_version, 0, 3) == $settings['required_version']) {
-                $this->_repositories[$codename]['usable'] = true;
+                if (isset($settings['architecture'])) {
+                    @OMVUtil::exec("dpkg --print-architecture", $output, $result);
+                    if ($result !== 0) {
+                        continue;
+                    }
+                    $architecture = $output[0];
+                    if ($architecture === $settings['architecture'])
+                    {
+                        $this->_repositories[$codename]['usable'] = true;
+                    }
+                } else {
+                    $this->_repositories[$codename]['usable'] = true;
+                }
             }
         }
         foreach ($this->_extra_repositories as $codename => $settings) {
