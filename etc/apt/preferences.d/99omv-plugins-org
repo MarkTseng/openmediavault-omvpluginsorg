@@ -20,4 +20,4 @@ Pin-Priority: 995
 
 Package: *
 Pin: release n=fedaykin-armhf, origin packages.omv-plugins.org
-Pin-Priority: 995
+Pin-Priority: 996
