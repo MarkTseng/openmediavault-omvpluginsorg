@@ -31,6 +31,7 @@ case "$1" in
 		/bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-*.list
 
 		versionname=$(xmlstarlet sel -t -v //versionname ${OMV_PRODUCTINFO_FILE} | xmlstarlet unesc)
+		architecture=$(dpkg --print-architecture)
 
 		case ${versionname} in
 			"Ix")
@@ -41,6 +42,11 @@ case "$1" in
 				;;
 			"Fedaykin")
                 echo 'deb http://packages.omv-plugins.org fedaykin main' >/etc/apt/sources.list.d/omv-plugins-org-fedaykin.list
+                case ${architecture} in
+                    "armhf")
+                        echo 'deb http://packages.omv-plugins.org fedaykin main' >/etc/apt/sources.list.d/omv-plugins-org-fedaykin-armhf.list
+                        ;;
+                esac
                 ;;
 		esac
 
