@@ -104,8 +104,7 @@ class OmvPluginsOrgRpc extends OMVRpc
                         continue;
                     }
                     $architecture = $output[0];
-                    if ($architecture === $settings['architecture'])
-                    {
+                    if ($architecture === $settings['architecture']) {
                         $this->_repositories[$codename]['usable'] = true;
                     }
                 } else {
@@ -164,11 +163,15 @@ class OmvPluginsOrgRpc extends OMVRpc
             throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
         }
 
-        if (!empty($data['use-stable']) and ($this->_repositories[$this->_omv_version_name]['usable'] === true)) {
-            $cmd = "sudo /bin/sh -c \"echo '" . $this->_repositories[$this->_omv_version_name]['source_line'] . "' >" . $this->_repositories[$this->_omv_version_name]['source_file'] . '"';
-            OMVUtil::exec($cmd, $output, $result);
-            if ($result !== 0) {
-                throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
+        if (!empty($data['use-stable'])) {
+            foreach ($this->_repositories as $codename => $settings) {
+                if ($settings['usable'] === true) {
+                    $cmd = "sudo /bin/sh -c \"echo '" . $settings['source_line'] . "' >" . $settings['source_file'] . '"';
+                    OMVUtil::exec($cmd, $output, $result);
+                    if ($result !== 0) {
+                        throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
+                    }
+                }
             }
         }
 
