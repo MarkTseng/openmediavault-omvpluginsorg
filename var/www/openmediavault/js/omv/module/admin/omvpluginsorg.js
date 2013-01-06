@@ -80,12 +80,20 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 						items   :[
 							{
 								xtype     :"checkbox",
-								name      :"use-donald",
-								fieldLabel:_("Donald"),
+								name      :"use-testing",
+								fieldLabel:_("Testing"),
 								checked   :false,
-								boxLabel  :_("Use the list of plugins provided in the Donald (unstable/testing) repository at OMV-Plugins.org."),
+								boxLabel  :_("Use the list of plugins provided in the Testing repository at OMV-Plugins.org."),
 								inputValue:1
 							},
+                            {
+                                xtype     :"checkbox",
+                                name      :"use-donald",
+                                fieldLabel:_("Donald"),
+                                checked   :false,
+                                boxLabel  :_("Use the list of plugins provided in the Donald (unstable/testing) repository at OMV-Plugins.org."),
+                                inputValue:1
+                            },
 							{
 								xtype     :"checkbox",
 								name      :"use-glass",
@@ -100,7 +108,7 @@ Ext.extend(OMV.Module.System.OmvPluginsOrg, OMV.FormPanelExt, {
 							},
 							{
 								fieldLabel:" ",
-								html      :_("<b>Donald and Glass only supports the last OMV version.<b>")
+								html      :_("<b>Testing, Donald and Glass only supports the last OMV version.<b>")
 							}
 						]
 					},

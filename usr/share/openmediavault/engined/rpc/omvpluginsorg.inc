@@ -58,6 +58,12 @@ class OmvPluginsOrgRpc extends OMVRpc
     );
 
     private $_extra_repositories = array(
+        'testing' => array(
+            'required_version' => '0.4',
+            'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-testing.list',
+            'source_line'      => 'deb http://packages.omv-plugins.org testing main',
+            'usable'           => false,
+        ),
         'donald' => array(
             'required_version' => '0.4',
             'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-donald.list',
@@ -72,12 +78,20 @@ class OmvPluginsOrgRpc extends OMVRpc
         ),
     );
 
+    private $_always_repositories = array(
+        'squeeze-backports'  => array(
+            'source_file'      => '/etc/apt/sources.list.d/omv-plugins-org-squeeze-backports.list',
+            'source_line'      => 'deb http://packages.omv-plugins.org squeeze-backports main',
+        ),
+    );
+
     var $methodSchemata = array(
         "set" => array(
             '{
 					"type":"object",
 					"properties":{
 							"use-stable":{"type":"boolean"},
+							"use-testing":{"type":"boolean"},
 							"use-donald":{"type":"boolean"},
 							"use-glass":{"type":"boolean"}
 					}
@@ -126,6 +140,7 @@ class OmvPluginsOrgRpc extends OMVRpc
     {
         $result = array(
             'use-stable' => false,
+            'use-testing' => false,
             'use-donald' => false,
             'use-glass'  => false,
         );
@@ -163,6 +178,14 @@ class OmvPluginsOrgRpc extends OMVRpc
             throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
         }
 
+        foreach ($this->_always_repositories as $codename => $settings) {
+            $cmd = "sudo /bin/sh -c \"echo '" . $settings['source_line'] . "' >" . $settings['source_file'] . '"';
+            OMVUtil::exec($cmd, $output, $result);
+            if ($result !== 0) {
+                throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
+            }
+        }
+
         if (!empty($data['use-stable'])) {
             foreach ($this->_repositories as $codename => $settings) {
                 if ($settings['usable'] === true) {
@@ -172,6 +195,14 @@ class OmvPluginsOrgRpc extends OMVRpc
                         throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
                     }
                 }
+            }
+        }
+
+        if (!empty($data['use-testing']) and ($this->_extra_repositories['testing']['usable'] === true)) {
+            $cmd = "sudo /bin/sh -c \"echo '" . $this->_extra_repositories['testing']['source_line'] . "' >" . $this->_extra_repositories['testing']['source_file'] . '"';
+            OMVUtil::exec($cmd, $output, $result);
+            if ($result !== 0) {
+                throw new OMVException(OMVErrorMsg::E_EXEC_FAILED, $cmd, implode("\n", $output));
             }
         }
 

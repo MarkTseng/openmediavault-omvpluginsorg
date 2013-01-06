@@ -33,6 +33,8 @@ case "$1" in
 		versionname=$(xmlstarlet sel -t -v //versionname ${OMV_PRODUCTINFO_FILE} | xmlstarlet unesc)
 		architecture=$(dpkg --print-architecture)
 
+		echo 'deb http://packages.omv-plugins.org squeeze-backports main' >/etc/apt/sources.list.d/omv-plugins-org-squeeze-backports.list
+
 		case ${versionname} in
 			"Ix")
 				echo 'deb http://packages.omv-plugins.org ix main' >/etc/apt/sources.list.d/omv-plugins-org-ix.list

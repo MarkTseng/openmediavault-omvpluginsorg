@@ -21,3 +21,11 @@ Pin-Priority: 995
 Package: *
 Pin: release n=fedaykin-armhf, origin packages.omv-plugins.org
 Pin-Priority: 996
+
+Package: *
+Pin: release n=testing, origin packages.omv-plugins.org
+Pin-Priority: 995
+
+Package: *
+Pin: release n=squeeze-backports, origin packages.omv-plugins.org
+Pin-Priority: 995

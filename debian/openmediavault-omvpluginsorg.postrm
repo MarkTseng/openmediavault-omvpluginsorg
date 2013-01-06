@@ -26,9 +26,17 @@ set -e
 
 if [ "$1" = "purge" ] || [ "$1" = "remove" ]; then
 
-	[ -e /etc/apt/sources.list.d/omv-plugins-org-stable.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-stable.list
-	[ -e /etc/apt/sources.list.d/omv-plugins-org-unstable.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-unstable.list
-		
+	[ -e /etc/apt/sources.list.d/omv-plugins-org-squeeze-backports.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-squeeze-backports.list
+	[ -e /etc/apt/sources.list.d/omv-plugins-org-squeeze-ix.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-squeeze-ix.list
+	[ -e /etc/apt/sources.list.d/omv-plugins-org-squeeze-omnius.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-squeeze-omnius.list
+	[ -e /etc/apt/sources.list.d/omv-plugins-org-squeeze-fedaykin.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-squeeze-fedaykin.list
+	[ -e /etc/apt/sources.list.d/omv-plugins-org-squeeze-fedaykin-armhf.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-squeeze-fedaykin-armhf.list
+
+	[ -e /etc/apt/sources.list.d/omv-plugins-org-squeeze-donald.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-squeeze-donald.list
+	[ -e /etc/apt/sources.list.d/omv-plugins-org-squeeze-testing.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-squeeze-testing.list
+
+	[ -e /etc/apt/sources.list.d/omv-plugins-org-squeeze-glass.list ] && /bin/rm -f /etc/apt/sources.list.d/omv-plugins-org-squeeze-glass.list
+
 fi
 
 #DEBHELPER#
