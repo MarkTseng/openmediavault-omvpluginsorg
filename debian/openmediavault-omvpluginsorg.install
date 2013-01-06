@@ -1,3 +1,4 @@
 usr/share/openmediavault/* usr/share/openmediavault
 var/www/openmediavault/*	var/www/openmediavault
 etc/apt/preferences.d/*		etc/apt/preferences.d
+usr/share/openmediavault/engined/* var/www/openmediavault
