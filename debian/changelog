@@ -1,3 +1,9 @@
+openmediavault-omvpluginsorg (0.4.2) stable; urgency=low
+
+  * Add testing/squeeze-backports
+
+ -- Marcel Beck <marcel.beck@mbeck.org>  Sun, 06 Jan 2013 15:23:38 +0100
+
 openmediavault-omvpluginsorg (0.4.1) stable; urgency=low
 
   * Activate Glass&Donald Repository for OMV 0.4
